@@ -3,21 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HumDum - Complete Payment</title>
+    <title>HumDum - Recharge</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: #0F0F1A; height: 100vh; display: flex; align-items: center; justify-content: center; }
-        iframe { width: 100%; height: 100%; border: none; max-width: 480px; }
+        body { background: #0F0F1A; font-family: Arial; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        .card { background: #1A1A2E; border-radius: 20px; padding: 30px; max-width: 400px; width: 90%; text-align: center; }
+        .logo { font-size: 28px; font-weight: bold; color: #FF2D55; margin-bottom: 8px; }
+        .amount { font-size: 48px; color: #FFD700; font-weight: bold; margin: 20px 0; }
+        .coins { color: #B0B0B0; font-size: 14px; margin-bottom: 20px; }
+        input { width: 100%; padding: 14px; border-radius: 12px; border: 1px solid #2A2A3E; background: #0F0F1A; color: white; font-size: 16px; margin-bottom: 12px; }
+        button { width: 100%; padding: 16px; border-radius: 12px; border: none; background: #FF2D55; color: white; font-size: 18px; font-weight: bold; cursor: pointer; margin-top: 8px; }
+        .secure { color: #808080; font-size: 11px; margin-top: 16px; }
     </style>
 </head>
 <body>
+    <div class="card">
+        <div class="logo">HumDum</div>
+        <div style="color:#B0B0B0;font-size:12px;">Recharge Coins</div>
+        <div class="amount" id="amount">₹0</div>
+        <div class="coins" id="coins">0 coins</div>
+        
+        <input type="tel" id="phone" placeholder="Phone Number" value="">
+        
+        <button onclick="pay()">Pay Now</button>
+        <div class="secure">🔒 Secured by Cashfree</div>
+    </div>
+
     <script>
         const params = new URLSearchParams(window.location.search);
-        const cfId = params.get('cf_id');
-        if (cfId) {
-            window.location.href = 'https://checkout.cashfree.com/pg/view/payment/collect?cf_id=' + cfId;
-        } else {
-            document.body.innerHTML = '<p style="color:white;text-align:center;">Invalid payment link</p>';
+        const amount = params.get('amount') || '0';
+        const coins = params.get('coins') || '0';
+        const packId = params.get('pack') || '';
+        
+        document.getElementById('amount').textContent = '₹' + amount;
+        document.getElementById('coins').textContent = coins + ' coins';
+
+        function pay() {
+            const phone = document.getElementById('phone').value || '9999999999';
+            window.location.href = 'https://payments.cashfree.com/forms/humdum?amount=' + amount + '&phone=' + phone;
         }
     </script>
 </body>
