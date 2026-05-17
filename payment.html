@@ -10,9 +10,8 @@
         .card { background: #1A1A2E; border-radius: 20px; padding: 30px; max-width: 400px; width: 90%; text-align: center; }
         .logo { font-size: 28px; font-weight: bold; color: #FF2D55; margin-bottom: 8px; }
         .amount { font-size: 48px; color: #FFD700; font-weight: bold; margin: 20px 0; }
-        .coins { color: #B0B0B0; font-size: 14px; margin-bottom: 20px; }
-        input { width: 100%; padding: 14px; border-radius: 12px; border: 1px solid #2A2A3E; background: #0F0F1A; color: white; font-size: 16px; margin-bottom: 12px; }
-        button { width: 100%; padding: 16px; border-radius: 12px; border: none; background: #FF2D55; color: white; font-size: 18px; font-weight: bold; cursor: pointer; margin-top: 8px; }
+        .coins { color: #B0B0B0; font-size: 14px; margin-bottom: 24px; }
+        button { width: 100%; padding: 16px; border-radius: 12px; border: none; background: #FF2D55; color: white; font-size: 18px; font-weight: bold; cursor: pointer; }
         .secure { color: #808080; font-size: 11px; margin-top: 16px; }
     </style>
 </head>
@@ -22,9 +21,6 @@
         <div style="color:#B0B0B0;font-size:12px;">Recharge Coins</div>
         <div class="amount" id="amount">₹0</div>
         <div class="coins" id="coins">0 coins</div>
-        
-        <input type="tel" id="phone" placeholder="Phone Number" value="">
-        
         <button onclick="pay()">Pay Now</button>
         <div class="secure">🔒 Secured by Cashfree</div>
     </div>
@@ -33,14 +29,13 @@
         const params = new URLSearchParams(window.location.search);
         const amount = params.get('amount') || '0';
         const coins = params.get('coins') || '0';
-        const packId = params.get('pack') || '';
+        const phone = params.get('phone') || '9999999999';
         
         document.getElementById('amount').textContent = '₹' + amount;
         document.getElementById('coins').textContent = coins + ' coins';
 
         function pay() {
-            const phone = document.getElementById('phone').value || '9999999999';
-            window.location.href = 'https://payments.cashfree.com/forms/humdum?amount=' + amount + '&phone=' + phone;
+            window.location.href = 'https://payments.cashfree.com/forms/humdum?phone=' + phone;
         }
     </script>
 </body>
