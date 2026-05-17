@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HumDum - Payment</title>
+    <style>
+        body { margin: 0; padding: 0; background: #0F0F1A; height: 100vh; }
+        iframe { width: 100%; height: 100%; border: none; }
+    </style>
+</head>
+<body>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const sessionId = urlParams.get('cf_id');
+        if (sessionId) {
+            window.location.href = 'https://checkout.cashfree.com/pg/view/payment/collect?cf_id=' + sessionId;
+        }
+    </script>
+</body>
+</html>
