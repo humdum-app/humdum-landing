@@ -3,177 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HumDum — Feel More, Earn More | Voice-First Social Platform</title>
-    <meta name="description" content="HumDum is India's voice-first social platform. Connect anonymously via voice calls, earn real money as a host, and build meaningful connections.">
-    <meta name="keywords" content="voice chat, earn money, social app, anonymous chat, host earnings, Indian app">
+    <title>HumDum — Feel More, Earn More</title>
+    <meta name="description" content="HumDum is a voice-first social platform where you connect, earn, and build meaningful relationships.">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0F0F1A; color: #FFFFFF; }
-        .nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background: #1A1A2E; border-bottom: 1px solid #2A2A3E; }
-        .nav-logo { font-size: 24px; color: #FF2D55; font-weight: bold; text-decoration: none; }
-        .nav-links a { color: #B0B0B0; text-decoration: none; margin-left: 24px; font-size: 14px; }
-        .nav-links a:hover { color: #FF2D55; }
-        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
-        .hero { text-align: center; padding: 80px 0; }
-        .hero h1 { font-size: 56px; color: #FF2D55; margin-bottom: 16px; }
-        .hero .tagline { font-size: 24px; color: #B0B0B0; margin-bottom: 12px; }
-        .hero .subtitle { font-size: 16px; color: #808080; max-width: 600px; margin: 0 auto 40px; line-height: 1.6; }
-        .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-        .btn-primary { background: #FF2D55; color: #FFF; padding: 16px 36px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 16px; }
-        .btn-secondary { background: transparent; color: #FF2D55; padding: 16px 36px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 16px; border: 2px solid #FF2D55; }
-        .section { padding: 60px 0; }
-        .section h2 { text-align: center; font-size: 32px; color: #FF2D55; margin-bottom: 40px; }
-        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; }
-        .card { background: #1A1A2E; border: 1px solid #2A2A3E; border-radius: 20px; padding: 32px; text-align: center; }
-        .card .icon { font-size: 40px; margin-bottom: 16px; }
-        .card h3 { color: #FFD700; margin-bottom: 12px; font-size: 18px; }
-        .card p { color: #B0B0B0; font-size: 14px; line-height: 1.6; }
-        .how-it-works { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; text-align: center; }
-        .step { padding: 24px; }
-        .step-number { display: inline-block; width: 48px; height: 48px; background: #FF2D55; color: #FFF; border-radius: 50%; line-height: 48px; font-size: 20px; font-weight: bold; margin-bottom: 16px; }
-        .step h4 { color: #FFF; margin-bottom: 8px; }
-        .step p { color: #B0B0B0; font-size: 13px; }
-        .economy-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
-        .economy-table th { background: #FF2D55; color: #FFF; padding: 12px; text-align: left; }
-        .economy-table td { padding: 12px; border-bottom: 1px solid #2A2A3E; color: #B0B0B0; }
-        .economy-table tr:hover { background: #1A1A2E; }
-        .cta { text-align: center; padding: 80px 0; background: linear-gradient(180deg, #1A1A2E, #0F0F1A); border: 1px solid #FF2D55; border-radius: 24px; margin: 40px 0; }
-        .cta h2 { color: #FFF; margin-bottom: 16px; }
-        .cta p { color: #B0B0B0; margin-bottom: 24px; }
-        footer { background: #1A1A2E; border-top: 1px solid #2A2A3E; padding: 40px; text-align: center; }
-        footer .links { margin-bottom: 20px; }
-        footer .links a { color: #B0B0B0; text-decoration: none; margin: 0 12px; font-size: 14px; }
-        footer .links a:hover { color: #FF2D55; }
-        footer .copyright { color: #808080; font-size: 13px; }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: #0F0F1A;
+            color: #FFFFFF;
+            min-height: 100vh;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+        .hero { text-align: center; padding: 60px 0; }
+        .hero h1 { font-size: 48px; color: #FF2D55; margin-bottom: 16px; }
+        .hero p { font-size: 20px; color: #B0B0B0; }
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 40px 0; }
+        .feature-card {
+            background: #1A1A2E;
+            border: 1px solid #2A2A3E;
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+        }
+        .feature-card h3 { color: #FFD700; margin-bottom: 8px; }
+        .feature-card p { color: #B0B0B0; font-size: 14px; }
+        .download-section { text-align: center; margin: 60px 0; padding: 40px; background: linear-gradient(180deg, #1A1A2E, #0F0F1A); border-radius: 20px; border: 1px solid #FF2D55; }
+        .download-section h2 { color: #FF2D55; margin-bottom: 16px; }
+        .download-btn {
+            display: inline-block;
+            background: #FF2D55;
+            color: white;
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 10px;
+            transition: transform 0.2s;
+        }
+        .download-btn:hover { transform: scale(1.05); }
+        .links { text-align: center; margin: 40px 0; padding: 20px; border-top: 1px solid #2A2A3E; }
+        .links a { color: #B0B0B0; margin: 0 16px; text-decoration: none; font-size: 14px; }
+        .links a:hover { color: #FF2D55; }
+        .contact { text-align: center; margin: 20px 0; color: #808080; font-size: 14px; }
+        .legal { text-align: center; margin: 10px 0; color: #808080; font-size: 13px; }
     </style>
 </head>
 <body>
-    <nav class="nav">
-        <a href="/" class="nav-logo">💜 HumDum</a>
-        <div class="nav-links">
-            <a href="#features">Features</a>
-            <a href="#how-it-works">How It Works</a>
-            <a href="#economy">Coin Economy</a>
-            <a href="contact.html">Contact</a>
-        </div>
-    </nav>
-
     <div class="container">
         <div class="hero">
-            <h1>Feel More, Earn More</h1>
-            <p class="tagline">India's Voice-First Social Platform</p>
-            <p class="subtitle">Connect anonymously via voice calls, earn real money by hosting, and build meaningful relationships. Female hosts earn coins. Male users pay coins per minute to talk.</p>
-            <div class="hero-buttons">
-                <a href="#" class="btn-primary">📱 Download on Android (Soon)</a>
-                <a href="#how-it-works" class="btn-secondary">How It Works →</a>
+            <h1>💜 HumDum</h1>
+            <p>Feel More, Earn More</p>
+        </div>
+
+        <div class="features">
+            <div class="feature-card">
+                <h3>🎤 Voice-First</h3>
+                <p>Connect through real voice, not just text</p>
+            </div>
+            <div class="feature-card">
+                <h3>💰 Earn Real Money</h3>
+                <p>Hosts earn coins that convert to real cash</p>
+            </div>
+            <div class="feature-card">
+                <h3>🤝 Anonymous & Safe</h3>
+                <p>Your identity is protected with avatars</p>
             </div>
         </div>
 
-        <div class="section" id="features">
-            <h2>Why HumDum?</h2>
-            <div class="features">
-                <div class="card">
-                    <div class="icon">🎤</div>
-                    <h3>Voice-First Connection</h3>
-                    <p>Real voice calls create deeper emotional bonds than text ever could. Hear the tone, feel the emotion.</p>
-                </div>
-                <div class="card">
-                    <div class="icon">💰</div>
-                    <h3>Earn Real Money</h3>
-                    <p>Female hosts earn coins per minute of talk time. Convert Golden Hearts to real cash via UPI withdrawal.</p>
-                </div>
-                <div class="card">
-                    <div class="icon">🛡️</div>
-                    <h3>Anonymous & Safe</h3>
-                    <p>Your identity is protected with avatars. Voice verification ensures genuine female hosts. Zero tolerance for abuse.</p>
-                </div>
-                <div class="card">
-                    <div class="icon">⭐</div>
-                    <h3>Trust & Reputation</h3>
-                    <p>Build your trust score through positive interactions. Higher trust unlocks premium features and better matches.</p>
-                </div>
-                <div class="card">
-                    <div class="icon">💝</div>
-                    <h3>Heart Economy</h3>
-                    <p>Receive hearts from callers. Every 100 hearts convert to 1 Golden Heart worth ₹3.50. Watch your earnings grow.</p>
-                </div>
-                <div class="card">
-                    <div class="icon">🌐</div>
-                    <h3>16 Indian Languages</h3>
-                    <p>Connect in Hindi, Telugu, Tamil, Bengali, Marathi, Punjabi, and more. Your primary language is your identity.</p>
-                </div>
-            </div>
+        <div class="download-section">
+            <h2>Coming Soon to Android</h2>
+            <p style="color:#B0B0B0; margin-bottom:20px;">Join the waitlist to be first</p>
+            <a href="#" class="download-btn">📱 Download on Android (Soon)</a>
         </div>
 
-        <div class="section" id="how-it-works">
-            <h2>How HumDum Works</h2>
-            <div class="how-it-works">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h4>Sign Up</h4>
-                    <p>Login with Google, set your nickname, choose your language, and get a gender-based avatar.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h4>Verify Voice</h4>
-                    <p>Female hosts complete a quick voice verification to confirm identity. Males skip this step.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h4>Recharge Coins</h4>
-                    <p>Male users buy coin packs starting at ₹25. Coins unlock calls, chats, and gifts.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h4>Connect & Earn</h4>
-                    <p>Tap "Random Connect" to meet someone new. Hosts earn coins. Callers pay per minute. Hearts are awarded after every call.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="section" id="economy">
-            <h2>Coin Economy</h2>
-            <p style="text-align:center;color:#B0B0B0;margin-bottom:24px;">Transparent pricing. Real earnings. No hidden fees.</p>
-
-            <h3 style="color:#FFD700;margin-bottom:12px;">💰 Coin Packs (For Callers)</h3>
-            <table class="economy-table">
-                <tr><th>Pack</th><th>Price</th><th>Coins</th><th>Talk Time</th></tr>
-                <tr><td>Chai Sip ☕</td><td>₹25</td><td>40</td><td>4 min</td></tr>
-                <tr><td>Double Dhamaka 💥</td><td>₹49</td><td>200</td><td>20 min</td></tr>
-                <tr><td>Late Night Talks 🌙</td><td>₹199</td><td>440</td><td>44 min</td></tr>
-                <tr><td>Dil Se Connect 💜</td><td>₹499</td><td>1,200</td><td>2 hr</td></tr>
-                <tr><td>Comfort Zone 🤗</td><td>₹999</td><td>2,500</td><td>4 hr 10 min</td></tr>
-                <tr><td>Soul Connect ✨</td><td>₹4,999</td><td>15,000</td><td>25 hr</td></tr>
-                <tr><td>Sultan of Hearts 💎</td><td>₹49,999</td><td>165,000</td><td>275 hr</td></tr>
-            </table>
-
-            <h3 style="color:#FFD700;margin:32px 0 12px;">💸 Host Earnings</h3>
-            <table class="economy-table">
-                <tr><th>Metric</th><th>Value</th></tr>
-                <tr><td>Earnings per coin spent on you</td><td>40%</td></tr>
-                <tr><td>Hearts per Golden Heart</td><td>100 Hearts = 1 GH</td></tr>
-                <tr><td>Golden Heart Value</td><td>₹3.50 per GH</td></tr>
-                <tr><td>Minimum Withdrawal</td><td>50 Golden Hearts (₹175)</td></tr>
-                <tr><td>Withdrawal Method</td><td>UPI (instant)</td></tr>
-            </table>
-        </div>
-
-        <div class="cta">
-            <h2>Ready to Feel More and Earn More?</h2>
-            <p>Join India's most emotionally intelligent social platform.</p>
-            <a href="#" class="btn-primary">📱 Coming Soon to Android</a>
-        </div>
-    </div>
-
-    <footer>
         <div class="links">
-            <a href="index.html">Home</a>
             <a href="privacy.html">Privacy Policy</a>
             <a href="terms.html">Terms of Service</a>
-            <a href="refund.html">Refund Policy</a>
             <a href="contact.html">Contact Us</a>
         </div>
-        <p class="copyright">© 2026 HumDum. All rights reserved. | hello@humdum.app | Mumbai, India</p>
-    </footer>
+
+        <div class="contact">
+            <p>© 2026 HumDum. All rights reserved.</p>
+            <p>Contact: hello@humdum.app</p>
+        </div>
+
+        <div class="legal">
+            <p><strong>Business Legal Name:</strong> KIRAN RAMDAS DHOTRE</p>
+            <p>Operated under the proprietorship of KIRAN RAMDAS DHOTRE</p>
+        </div>
+    </div>
 </body>
 </html>
